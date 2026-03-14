@@ -26,15 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Sticky Navbar & Scroll Styling
     const navbar = document.querySelector('.navbar');
 
-    // Only apply scroll listener
+    function updateNavbar() {
+        if (!navbar) return;
+        
+        const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+        
+        if (window.scrollY > 50 || !isHomePage) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+
     if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+        window.addEventListener('scroll', updateNavbar);
+        updateNavbar(); // Initial check
     }
 
     // 3. Smooth Scrolling for Anchor Links (safeguard for older browsers)
