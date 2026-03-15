@@ -500,6 +500,9 @@ ul {
     cursor: pointer;
     height: 340px;
     border: 1px solid var(--color-border);
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .service-card:hover {
