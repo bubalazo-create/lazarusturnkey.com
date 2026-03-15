@@ -549,12 +549,8 @@ ul {
     right: 0;
     padding: var(--spacing-md);
     z-index: 2;
-    transform: translateY(10px);
-    transition: var(--transition-smooth);
-}
-
-.service-card:hover .service-content {
     transform: translateY(0);
+    transition: var(--transition-smooth);
 }
 
 .service-title {
@@ -565,17 +561,11 @@ ul {
 }
 
 .service-text {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     line-height: 1.6;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: var(--transition-smooth);
-}
-
-.service-card:hover .service-text {
     opacity: 1;
-    transform: translateY(0);
+    transition: var(--transition-smooth);
 }
 
 /* ============ About Section ============ */
