@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our gallery of completed projects in Malta — electrical, plumbing, tiling, plastering, gypsum, and full turnkey finishings by Lazarus Turnkey Contractor.">
+    <meta name="keywords" content="Gallery, Malta Construction, Turnkey Finishing, Tile Laying, Electrical, Plumbing, Plastering, Gypsum, Projects Malta">
+    <meta name="author" content="Lazarus Turnkey Contractor">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lazarusturnkey.com/gallery.html">
+    <meta property="og:title" content="Gallery | Lazarus Turnkey Contractor Malta">
+    <meta property="og:description" content="View our completed finishing and turnkey projects in Malta.">
+    <meta property="og:image" content="https://www.lazarusturnkey.com/turnkey.jpg">
+    <link rel="canonical" href="https://www.lazarusturnkey.com/gallery.html">
+    <title>Gallery | Lazarus Turnkey Contractor Malta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Logo Main.png">
+
+    <style>
+        /* ── Gallery Hero ── */
+        .gallery-hero {
+            height: 45vh;
+            min-height: 340px;
+            background: linear-gradient(160deg, rgba(26,35,50,0.92) 0%, rgba(26,35,50,0.55) 55%, rgba(241,127,32,0.22) 100%),
+                        url('turnkey.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* ── Filter Bar ── */
+        .gallery-section { padding: 4rem 0 6rem; }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.55rem 1.4rem;
+            border-radius: 9999px;
+            border: 2px solid var(--color-border);
+            background: var(--color-white);
+            color: var(--color-text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 18px var(--color-primary-glow);
+        }
+
+        /* ── Masonry Grid ── */
+        .gallery-grid {
+            columns: 3;
+            column-gap: 1.25rem;
+        }
+
+        @media (max-width: 900px)  { .gallery-grid { columns: 2; } }
+        @media (max-width: 550px)  { .gallery-grid { columns: 1; } }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.25rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+                        box-shadow 0.35s ease,
+                        opacity 0.4s ease;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.75);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,35,50,0.9) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.25rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-label {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gallery-overlay-label i {
+            color: var(--color-primary-light);
+            font-size: 1rem;
+        }
+
+        /* Zoom icon top-right */
+        .zoom-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.85rem;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .gallery-item:hover .zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ── Lightbox ── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,15,25,0.96);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background: var(--color-primary);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--color-primary);
+        }
+
+        .lightbox-prev { left: 1.5rem; }
+        .lightbox-next { right: 1.5rem; }
+
+        .lightbox-prev:hover { transform: translateY(-50%) translateX(-2px); }
+        .lightbox-next:hover { transform: translateY(-50%) translateX(2px); }
+
+        /* ── No results ── */
+        .no-results {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--color-text-light);
+            font-size: 1rem;
+            display: none;
+        }
+
+        /* ── Breadcrumb ── */
+        .breadcrumb { padding: 1rem 0 0; font-size: 0.85rem; color: var(--color-text-light); }
+        .breadcrumb a { color: var(--color-primary); }
+        .breadcrumb a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+        <!-- Under Construction Banner -->
+    <div class="construction-banner" id="constructionBanner">
+        <span>?? This website is currently under construction � more content coming soon!</span>
+        <button class="construction-close" onclick="this.parentElement.style.display='none'; document.body.style.paddingTop='0'; document.querySelector('.navbar').style.top='0';" aria-label="Dismiss">?</button>
+    </div>
+
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="Logo Main.png" alt="Lazarus Turnkey Contractor Logo" class="nav-logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link btn-contact">Get a Quote</a></li>
+            </ul>
+            <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero gallery-hero">
+        <div class="hero-content container">
+            <span class="hero-badge">Our Work</span>
+            <h1 class="hero-title" style="font-size: clamp(2rem,5vw,3.5rem);">Project Gallery</h1>
+            <p class="hero-subtitle">A showcase of our craftsmanship across Malta — from shell to fully finished.</p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / Gallery</div>
+
+            <div class="section-header text-center reveal" style="margin-top:2rem;">
+                <h2 class="section-title">Browse Our Work</h2>
+                <div class="divider"></div>
+                <p class="section-desc">Filter by service category or view everything at once.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="turnkey">Turnkey</button>
+                <button class="filter-btn" data-filter="electrical">Electrical</button>
+                <button class="filter-btn" data-filter="plumbing">Plumbing</button>
+                <button class="filter-btn" data-filter="tiling">Tiling</button>
+                <button class="filter-btn" data-filter="plastering">Plastering</button>
+                <button class="filter-btn" data-filter="gypsum">Gypsum</button>
+                <button class="filter-btn" data-filter="screed">Screed</button>
+                <button class="filter-btn" data-filter="waterproofing">Waterproofing</button>
+                <button class="filter-btn" data-filter="ceiling">Ceiling</button>
+                <button class="filter-btn" data-filter="exterior">Exterior</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+
+                <div class="gallery-item" data-category="turnkey" data-label="Full Turnkey Finishing">
+                    <img src="turnkey.jpg" alt="Full Turnkey Finishing Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-home"></i> Full Turnkey Finishing</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="electrical" data-label="Electrical Installations">
+                    <img src="Electrical1.jpg" alt="Electrical Installation Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-bolt"></i> Electrical</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="plumbing" data-label="Plumbing Systems">
+                    <img src="Plumbing1.png" alt="Plumbing System Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-wrench"></i> Plumbing</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="tiling" data-label="Tiling & Flooring">
+                    <img src="tile-laying.png" alt="Tile Laying Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-th"></i> Tiling &amp; Flooring</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="plastering" data-label="Plastering & Painting">
+                    <img src="plastering.png" alt="Plastering Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-paint-roller"></i> Plastering</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="plastering" data-label="Interior Painting">
+                    <img src="Painting.png" alt="Interior Painting Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-brush"></i> Painting</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="gypsum" data-label="Gypsum & Drywall">
+                    <img src="Gypsum.jpg" alt="Gypsum Works Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-layer-group"></i> Gypsum &amp; Drywall</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="screed" data-label="Screeding Services">
+                    <img src="Screed.jpg" alt="Screeding Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-layer-group"></i> Screeding</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="waterproofing" data-label="Waterproofing">
+                    <img src="Waterproofing.jpg" alt="Waterproofing Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-tint"></i> Waterproofing</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="ceiling" data-label="Stretched Ceiling">
+                    <img src="Strechedceiling.jpg" alt="Stretched Ceiling Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-border-all"></i> Stretched Ceiling</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="exterior" data-label="Facade & Exterior">
+                    <img src="facade.jpg" alt="Facade Finishing Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-building"></i> Facade</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="plumbing" data-label="Bathroom Fitting">
+                    <img src="bathroom.jpg" alt="Bathroom Installation Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-shower"></i> Bathroom</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="exterior" data-label="Pool & Outdoor">
+                    <img src="pool.jpg" alt="Pool Finishing Malta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-label"><i class="fas fa-swimming-pool"></i> Pool &amp; Outdoor</div>
+                    </div>
+                    <div class="zoom-icon"><i class="fas fa-expand-alt"></i></div>
+                </div>
+
+            </div>
+
+            <p class="no-results" id="noResults">No photos found for this category yet.</p>
+
+            <!-- CTA -->
+            <div class="text-center" style="margin-top:3.5rem;">
+                <p style="color:var(--color-text-light);margin-bottom:1.25rem;font-size:1rem;">
+                    Interested in working with us?
+                </p>
+                <a href="index.html#contact" class="btn btn-primary">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // ── Filter ──────────────────────────────────────────────────
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const noResults = document.getElementById('noResults');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                let visible = 0;
+
+                galleryItems.forEach(item => {
+                    const match = filter === 'all' || item.dataset.category === filter;
+                    item.classList.toggle('hidden', !match);
+                    if (match) visible++;
+                });
+
+                noResults.style.display = visible === 0 ? 'block' : 'none';
+            });
+        });
+
+        // ── Lightbox ─────────────────────────────────────────────────
+        const lightbox   = document.getElementById('lightbox');
+        const lbImg      = document.getElementById('lightboxImg');
+        const lbCaption  = document.getElementById('lightboxCaption');
+        const lbClose    = document.getElementById('lightboxClose');
+        const lbPrev     = document.getElementById('lightboxPrev');
+        const lbNext     = document.getElementById('lightboxNext');
+
+        let currentIndex = 0;
+        let visibleItems = [];
+
+        function openLightbox(index) {
+            visibleItems = [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+            currentIndex = index;
+            showSlide(currentIndex);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showSlide(i) {
+            const item = visibleItems[i];
+            if (!item) return;
+            const img = item.querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCaption.textContent = item.dataset.label || '';
+        }
+
+        galleryItems.forEach((item, idx) => {
+            item.addEventListener('click', () => {
+                const visible = [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+                const visIdx = visible.indexOf(item);
+                openLightbox(visIdx);
+            });
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        lbPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            showSlide(currentIndex);
+        });
+
+        lbNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            showSlide(currentIndex);
+        });
+
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape')      closeLightbox();
+            if (e.key === 'ArrowLeft')   { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showSlide(currentIndex); }
+            if (e.key === 'ArrowRight')  { currentIndex = (currentIndex + 1) % visibleItems.length; showSlide(currentIndex); }
+        });
+    </script>
+</body>
+</html>

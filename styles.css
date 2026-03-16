@@ -1183,3 +1183,64 @@ ul {
         height: 260px;
     }
 }
+
+/* ============ Under Construction Banner ============ */
+.construction-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    text-align: center;
+    padding: 10px 40px;
+    z-index: 10001; /* Above navbar */
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bannerPulse 3s infinite;
+}
+
+.construction-close {
+    position: absolute;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: var(--transition-fast);
+}
+
+.construction-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes bannerPulse {
+    0% { background-color: var(--color-primary); }
+    50% { background-color: var(--color-primary-dark); }
+    100% { background-color: var(--color-primary); }
+}
+
+/* Push navbar down when banner is present */
+body {
+    padding-top: 40px; /* Approximate height of the banner */
+}
+
+.navbar {
+    top: 40px;
+    transition: top 0.3s ease;
+}
+
+.navbar.scrolled {
+    top: 0; /* Align to top when scrolled if desired, or keep as is */
+}
