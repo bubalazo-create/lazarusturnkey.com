@@ -27,14 +27,19 @@
         .sidebar-card p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
         .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: var(--color-text-light); }
         .breadcrumb a { color: var(--color-primary); }
-        .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
+        
+        .service-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .service-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; }
+        .service-gallery img:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+        .service-gallery .wide { grid-column: 1 / -1; height: 300px; }
+        
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
     </style>
 </head>
 <body>
         <!-- Under Construction Banner -->
     <div class="construction-banner" id="constructionBanner">
-        <span>&#128679; This website is currently under construction � more content coming soon!</span>
+        <span>&#128679; This website is currently under construction — more content coming soon!</span>
         <button class="construction-close" onclick="this.parentElement.style.display='none'; document.body.style.paddingTop='0'; document.querySelector('.navbar').style.top='0';" aria-label="Dismiss">?</button>
     </div>
 
@@ -44,8 +49,9 @@
             <ul class="nav-menu">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="index.html#about" class="nav-link">About Us</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
                 <li><a href="index.html#contact" class="nav-link btn-contact">Get a Quote</a></li>
             </ul>
             <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
@@ -69,7 +75,13 @@
                     <p>Water ingress is one of the most damaging and costly problems in any property. Our waterproofing service creates a reliable barrier on roofs, terraces, balconies, bathrooms, wet rooms, and planter boxes — preventing moisture from penetrating slabs and causing leaks to rooms below.</p>
                     <p>We apply the correct system for each situation, whether that is a membrane applied cold, a torch-on bituminous system, a liquid-applied coating or a cementitious slurry for bathroom wet areas.</p>
 
-                    <div class="photo-placeholder">📷 Photos coming soon</div>
+                    <div class="service-gallery">
+                        <img src="Balzan/Roof-waterproofing-Balzan.jpg" alt="Roof waterproofing with gray membrane">
+                        <img src="Balzan/Liquid-membrane-Balzan.jpg" alt="Applying green liquid membrane to roof">
+                        <img src="Attard/Pool-waterproofing-attard.png" alt="Swimming pool waterproofing">
+                        <img src="Mellieha/Terrace-Waterproofing-Mellieha.jpg" alt="Waterproofing application on a large terrace">
+                        <img src="Valletta/Clinic-waterproofing-valletta.jpg" alt="Indoor floor waterproofing" class="wide">
+                    </div>
 
                     <h3>What Our Waterproofing Service Includes</h3>
                     <ul>
