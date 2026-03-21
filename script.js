@@ -166,4 +166,53 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.remove('active');
     });
 
+    // 8. Cookie Consent & Google Analytics
+    const measurementId = 'G-10SZRQJE24';
+    
+    function loadGoogleAnalytics() {
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(script1);
+
+        const script2 = document.createElement('script');
+        script2.innerHTML = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${measurementId}');
+        `;
+        document.head.appendChild(script2);
+    }
+
+    // Check localStorage
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+        loadGoogleAnalytics();
+    } else if (!localStorage.getItem('cookieConsent')) {
+        // Build the banner
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.innerHTML = `
+            <div class="cookie-content container">
+                <p>We use cookies and Google Analytics to monitor traffic and improve your experience on our site. Do you accept these tracking cookies?</p>
+                <div class="cookie-buttons">
+                    <button id="btn-accept-cookies" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Accept</button>
+                    <button id="btn-decline-cookies" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; border-color: var(--color-primary); color: var(--color-primary);">Decline</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        document.getElementById('btn-accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.classList.add('hidden');
+            loadGoogleAnalytics();
+        });
+
+        document.getElementById('btn-decline-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.classList.add('hidden');
+        });
+    }
+
 });
