@@ -28,6 +28,9 @@
         .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: var(--color-text-light); }
         .breadcrumb a { color: var(--color-primary); }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
+        .service-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .service-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; }
+        .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
     </style>
 </head>
@@ -70,7 +73,14 @@
                     <p>Screed is applied over the structural concrete slab to create a smooth, level surface for tiling, vinyl, parquet or any other floor finish. A proper screed protects underfloor heating pipes, encases service conduits and ensures the finished floor is flat without humps or dips that would cause tiles to crack or hollow over time.</p>
                     <p>We apply both traditional sand-cement screed and self-levelling compound depending on the project requirements and time constraints.</p>
 
-                    <div class="photo-placeholder">📷 Photos coming soon</div>
+                    <div class="service-gallery">
+                        <img src="Screeding/Birzebbuga%20terrace.jpg" alt="Birzebbuga terrace screed" loading="lazy">
+                        <img src="Screeding/Mellieha%20house.jpg" alt="Mellieha house screed" loading="lazy">
+                        <img src="Screeding/Ta-xbiex%20screed.jpg" alt="Ta-xbiex screed" loading="lazy">
+                        <img src="Screeding/Ta-xbiex%20screed1.png" alt="Ta-xbiex screed 1" loading="lazy">
+                        <img src="Screeding/Ta-xbiex%20screed%203.jpg" alt="Ta-xbiex screed 3" loading="lazy">
+                        <img src="Screeding/Valletta%20clinic.jpg" alt="Valletta clinic screed" loading="lazy">
+                    </div>
 
                     <h3>What Our Screeding Service Includes</h3>
                     <ul>
