@@ -28,12 +28,15 @@
         .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: var(--color-text-light); }
         .breadcrumb a { color: var(--color-primary); }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
+        .project-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .project-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; display: block; }
+        .project-gallery img:hover { transform: scale(1.03); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-bathroom.html">
 </head>
 <body>
-        
+    
 
     <nav class="navbar scrolled">
         <div class="container nav-container">
@@ -68,11 +71,11 @@
                     <p>We install bathrooms from scratch — from the first plumbing rough-in right through to hanging towel rails and installing mirrors. Our team coordinates waterproofing, tiling, plumbing connections and electrical work to deliver a fully functional, beautifully finished bathroom.</p>
                     <p>Whether it is a compact en-suite or a spacious master bathroom with a free-standing bath, walk-in shower and double vanity, we handle every detail.</p>
 
-                    <div class="project-gallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                        <img src="Bathroom/20180719_081545.jpg" alt="Bathroom Project 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Bathroom/Attard-Bathroom.jpg" alt="Attard Bathroom" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Bathroom/Mellieha-bathroom.jpg" alt="Mellieha Bathroom" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Bathroom/Naxxar-school-bathroom.jpg" alt="Naxxar School Bathroom" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="project-gallery">
+                        <img src="Bathroom/20180719_081545.jpg" alt="Bathroom Project 1">
+                        <img src="Bathroom/Attard-Bathroom.jpg" alt="Attard Bathroom">
+                        <img src="Bathroom/Mellieha-bathroom.jpg" alt="Mellieha Bathroom">
+                        <img src="Bathroom/Naxxar-school-bathroom.jpg" alt="Naxxar School Bathroom">
                     </div>
 
                     <h3>What Our Bathroom Installation Includes</h3>
@@ -89,7 +92,7 @@
                         <li>Heated towel rail connection</li>
                     </ul>
 
-                    <h3>Materials & Fixtures We Work With</h3>
+                    <h3>Materials &amp; Fixtures We Work With</h3>
                     <ul>
                         <li>All major sanitary ware brands (Grohe, Hansgrohe, Roca, Ideal Standard)</li>
                         <li>Wall-hung and floor-standing WC units</li>
@@ -119,4 +122,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

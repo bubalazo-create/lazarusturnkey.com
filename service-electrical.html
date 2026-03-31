@@ -29,8 +29,8 @@
         .breadcrumb a { color: var(--color-primary); }
         .breadcrumb a:hover { text-decoration: underline; }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
-        .service-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
-        .service-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; }
+        .service-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .service-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; display: block; }
         .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
     </style>

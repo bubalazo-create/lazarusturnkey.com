@@ -28,12 +28,15 @@
         .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: var(--color-text-light); }
         .breadcrumb a { color: var(--color-primary); }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
+        .project-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .project-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; display: block; }
+        .project-gallery img:hover { transform: scale(1.03); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-tiling.html">
 </head>
 <body>
-        
+    
 
     <nav class="navbar scrolled">
         <div class="container nav-container">
@@ -68,12 +71,13 @@
                     <p>Tiling is one of the most visible elements of any finished space — it defines the character of bathrooms, kitchens, terraces and living areas. Our experienced tilers handle all tile types and formats, from small mosaic tiles to large 120x120cm slabs, with precise cutting and perfectly aligned joints.</p>
                     <p>We take tiling seriously, starting with a proper substrate assessment and waterproofing where required, ensuring tiles bond correctly and stay in place for years to come.</p>
 
-                    <div class="project-gallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                        <img src="Tiling/20180216_111730.jpg" alt="Tiling Project 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Tiling/Birzebbuga-facade%20.jpg" alt="Birzebbuga Facade" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Tiling/Mellieha-cortyard.jpg" alt="Mellieha Courtyard" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Tiling/Mellieha-near-pool.jpg" alt="Mellieha Pool Area" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="Tiling/rabat-office.jpg" alt="Rabat Office" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="project-gallery">
+                        <img src="Tiling/20180216_111730.jpg" alt="Tiling Project 1">
+                        <img src="Tiling/Birzebbuga-facade .jpg" alt="Birzebbuga Facade">
+                        <img src="Tiling/Floor-tiling-Mosta.jpg" alt="Floor Tiling Mosta">
+                        <img src="Tiling/Mellieha-cortyard.jpg" alt="Mellieha Courtyard">
+                        <img src="Tiling/Mellieha-near-pool.jpg" alt="Mellieha Pool Area">
+                        <img src="Tiling/rabat-office.jpg" alt="Rabat Office">
                     </div>
 
                     <h3>What Our Tiling Service Includes</h3>
@@ -119,4 +123,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
