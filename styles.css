@@ -1423,3 +1423,43 @@ body {
     color: var(--color-text-light);
     line-height: 1.6;
 }
+
+/* ============ Image Watermarks ============ */
+.gallery-item::after,
+.service-watermark-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background: url('Logo Main.png') center/contain no-repeat;
+    opacity: 0.15; /* Highly transparent */
+    pointer-events: none; /* Allows clicking through to images */
+    z-index: 5;
+}
+
+.service-watermark-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.service-watermark-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    transition: transform 0.3s ease !important;
+}
+
+.service-watermark-wrapper:hover img {
+    transform: scale(1.02) !important;
+}

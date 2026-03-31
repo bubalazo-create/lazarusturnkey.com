@@ -241,4 +241,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 10. Dynamic Watermark injection for service galleries
+    const serviceImages = document.querySelectorAll('.service-gallery img');
+    serviceImages.forEach(img => {
+        if (!img.parentElement.classList.contains('service-watermark-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'service-watermark-wrapper';
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+        }
+    });
+
 });
