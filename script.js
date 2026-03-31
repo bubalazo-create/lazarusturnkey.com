@@ -214,5 +214,31 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.classList.add('hidden');
         });
     }
+    // 9. FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (questionBtn && answer) {
+            questionBtn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+                
+                // Close all
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if(otherAnswer) otherAnswer.style.maxHeight = null;
+                });
+                
+                // Toggle current
+                if (!isOpen) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 50 + "px";
+                }
+            });
+        }
+    });
 
 });
