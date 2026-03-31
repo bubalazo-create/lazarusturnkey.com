@@ -1255,19 +1255,19 @@ ul {
     100% { background-color: var(--color-primary); }
 }
 
-/* Push navbar down when banner is present */
-body {
-    padding-top: 40px; /* Approximate height of the banner */
-}
+/* Push navbar down when banner is present 
+body { padding-top: 40px; } 
 
-.navbar {
-    top: 40px;
-    transition: top 0.3s ease;
-}
+.navbar { 
+    top: 0; 
+    transition: top 0.3s ease; 
+} 
 
-.navbar.scrolled {
-    top: 0; /* Align to top when scrolled if desired, or keep as is */
+@media (max-width: 600px) {
+    body { padding-top: 0; }
+    .navbar { top: 0; }
 }
+*/
 
 /* ============ Lightbox ============ */
 .lightbox {
