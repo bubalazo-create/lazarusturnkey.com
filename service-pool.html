@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pool finishing and tiling services in Malta by Lazarus Turnkey Contractor. Specialist pool tiling, waterproofing and coping.">
-    <title>Pool Finishing & Tiling | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Expert swimming pool tiling and waterproofing in Malta. Pool-grade mosaic tiles, epoxy grout, coping stones and pool surround finishing for new and renovation projects.">
+    <title>Pool Tiling &amp; Waterproofing Malta | Swimming Pool Finishing | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,16 @@
         .project-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; display: block; }
         .project-gallery img:hover { transform: scale(1.03); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-pool.html">
 </head>
@@ -127,8 +137,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Pool Tiling &amp; Waterproofing</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What tiles are suitable for a swimming pool? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Pool-grade glass mosaic tiles, porcelain or ceramic tiles with water absorption below 0.5% are required for permanent water immersion. We use two-component epoxy grout — not standard cement grout — for all pool applications.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is the difference between cement grout and epoxy grout for pools? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Cement grout absorbs water and pool chemicals, leading to staining, discolouration and joint failure. Epoxy grout is completely waterproof, chemical resistant and does not support algae or mould growth — it is the only correct material for pool tile joints.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long after pool tiling can the pool be filled? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Allow a minimum of 7 days after grouting before filling the pool. This ensures the epoxy grout is fully cured and the shell waterproofing has reached its full strength. Filling too early can compromise the grout and void any material warranty.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you resurface an old pool with failing tiles? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we remove damaged or delaminating tiles, assess and repair the waterproofing layer beneath, and re-tile using pool-grade materials. A site visit is required to assess the full scope and condition of the existing shell.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you tile the pool surround and coping as well? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we tile pool surrounds, step nosings, coping stones and pool decking, using non-slip porcelain rated for external wet areas. Coping tiles are set with a slight overhang and drip edge to channel water away from the pool shell.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What tiles are suitable for a swimming pool?", "acceptedAnswer": {"@type": "Answer", "text": "Pool-grade glass mosaic, porcelain or ceramic tiles with water absorption below 0.5%. Combined with two-component epoxy grout for permanent immersion."}},
+        {"@type": "Question", "name": "What is the difference between cement grout and epoxy grout for pools?", "acceptedAnswer": {"@type": "Answer", "text": "Cement grout absorbs water and pool chemicals leading to failure. Epoxy grout is waterproof, chemical resistant and does not support algae growth."}},
+        {"@type": "Question", "name": "How long after pool tiling can the pool be filled?", "acceptedAnswer": {"@type": "Answer", "text": "Allow a minimum of 7 days after grouting before filling the pool, to allow full epoxy cure and waterproofing strength."}},
+        {"@type": "Question", "name": "Can you resurface an old pool with failing tiles?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we remove failing tiles, repair the waterproofing below, and re-tile using pool-grade materials. A site visit is required to assess scope."}},
+        {"@type": "Question", "name": "Do you tile the pool surround and coping as well?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we tile surrounds, step nosings, coping stones and pool decking using non-slip porcelain for external wet areas."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

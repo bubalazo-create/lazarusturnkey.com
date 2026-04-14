@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional painting services in Malta by Lazarus Turnkey Contractor. Interior and exterior painting with premium paints.">
-    <title>Painting | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Professional painting contractors in Malta. Interior and exterior painting with premium emulsions, masonry paint and specialist coatings. Feature walls, ceilings and facades.">
+    <title>Painting Contractors Malta | Interior &amp; Exterior Painting | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -38,6 +38,16 @@
         .breadcrumb a { color: var(--color-primary); }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-painting.html">
 </head>
@@ -75,7 +85,7 @@
                 <div class="content-block">
                     <h2>Professional Painting Services in Malta</h2>
                     <p>Painting is the final transformation — it gives personality and depth to a space. Our painters work on properly plastered and primed surfaces, applying paint in clean, even coats that hold their colour and finish for years. We work with all major paint brands and can mix any colour to match your design specification.</p>
-                    <p>We cover internal walls and ceilings, external facades, feature walls, woodwork, metal railings and more.</p>
+                    <p>We cover internal walls and ceilings, external facades and feature walls across all of Malta. Our standard work uses McPherson and Sigma paints; for premium specification finishes we also work with Dulux, Jotun and Tikkurila.</p>
 
                     <div class="photo-placeholder">📷 Photos coming soon</div>
 
@@ -84,8 +94,6 @@
                         <li>Interior wall and ceiling painting</li>
                         <li>External facade painting and rendering sealing</li>
                         <li>Feature wall painting and colour blocking</li>
-                        <li>Door and window frame painting</li>
-                        <li>Skirting board and architrave painting</li>
                         <li>Metal railing and gate painting</li>
                         <li>Primer and undercoat application</li>
                         <li>Sanding and gap filling before paint</li>
@@ -94,10 +102,10 @@
 
                     <h3>Materials We Use</h3>
                     <ul>
-                        <li>Premium interior emulsions (Dulux, Tikkurila or equivalent)</li>
-                        <li>Exterior masonry paint with weather resistance</li>
+                        <li>McPherson and Sigma interior emulsions (standard specification)</li>
+                        <li>Dulux, Jotun and Tikkurila for premium specification projects</li>
+                        <li>Exterior masonry paint with weather resistance suitable for Malta's climate</li>
                         <li>High-build primer for new plaster surfaces</li>
-                        <li>Oil-based gloss and satinwood for woodwork</li>
                         <li>Anti-mould paint for bathrooms and humid areas</li>
                         <li>Masking tape and dust sheets for clean edges and floors</li>
                     </ul>
@@ -118,8 +126,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Painting</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How many coats of paint do you apply? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Typically two finish coats over a primed surface. On new plaster we first apply a diluted mist coat to seal the alkaline surface and prevent the paint from being absorbed unevenly, then follow with two full-strength coats.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What paint do you use in damp or humid areas? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We use anti-mould, moisture-resistant emulsions with fungicidal additives in bathrooms, kitchens and any area where humidity is consistently high. These prevent mould growth on the painted surface.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you match a specific paint colour? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we use machine-mixed paint from McPherson and Sigma for standard projects to match any RAL, NCS or custom colour reference. For premium specification work we also use Dulux, Jotun and Tikkurila mixing systems.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you paint external facades? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — exterior masonry painting is part of our service. We prepare and prime surfaces before applying weather-resistant masonry paint suitable for Malta's UV exposure and salt-air conditions.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">When can I use a painted room after you finish? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Water-based emulsions are touch dry within 1–2 hours. We recommend keeping windows open for ventilation for at least 24 hours and avoiding placing furniture hard against freshly painted walls for the first day.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How many coats of paint do you apply?", "acceptedAnswer": {"@type": "Answer", "text": "Typically two finish coats over a primed surface. On new plaster we apply a diluted mist coat first to seal the alkaline surface."}},
+        {"@type": "Question", "name": "What paint do you use in damp or humid areas?", "acceptedAnswer": {"@type": "Answer", "text": "Anti-mould, moisture-resistant emulsions with fungicidal additives in bathrooms, kitchens and any humid area."}},
+        {"@type": "Question", "name": "Can you match a specific paint colour?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we use machine-mixed McPherson and Sigma paints for standard projects. For premium work we also use Dulux, Jotun and Tikkurila mixing systems."}},
+        {"@type": "Question", "name": "Do you paint external facades?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — exterior masonry painting using weather-resistant paint suitable for Malta's UV exposure and salt-air conditions."}},
+        {"@type": "Question", "name": "When can I use a painted room after you finish?", "acceptedAnswer": {"@type": "Answer", "text": "Water-based emulsions are touch dry within 1–2 hours. We recommend ventilation for 24 hours and avoid placing furniture hard against fresh paint for the first day."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

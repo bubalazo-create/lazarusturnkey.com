@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Property maintenance services in Malta by Lazarus Turnkey Contractor. Electrical repairs, plumbing fixes, tiling, painting, and general handyman works for residential and commercial properties.">
-    <title>Property Maintenance | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Property maintenance contractors in Malta for residential landlords and property management companies. Electrical, plumbing, tiling, painting and general repairs. Rapid response and scheduled programmes.">
+    <title>Property Maintenance Malta | Building Maintenance Contractor | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -81,11 +81,17 @@
 
         /* Emergency strip removed */
 
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr; }
-            .sidebar-card { position: static; }
-            .emergency-strip { flex-direction: column; text-align: center; }
-        }
+        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-maintenance.html">
 </head>
@@ -194,7 +200,61 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Property Maintenance</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you work with property management companies in Malta? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we work directly with property management companies on ongoing maintenance contracts, providing reliable tradespeople across all disciplines including electrical, plumbing, tiling, plastering and painting. We understand the importance of prompt response and clear reporting for portfolio management.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you carry out a refurbishment between tenancies? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — between-tenancy refurbishments are a core part of our maintenance work. We can repaint throughout, replace damaged tiles, fix plumbing issues, repair gypsum ceilings and carry out general touch-up work to bring a property back to a lettable standard quickly.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you offer scheduled maintenance programmes? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we offer scheduled periodic maintenance for residential and commercial properties. This can include gutter cleaning, roof inspection, facade repainting cycles and plumbing checks, all planned in advance to avoid reactive emergency costs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is your typical response time for a maintenance call? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>For clients on retainer maintenance agreements, we target a same-day or next-day response for most reported issues. Emergency situations such as water leaks or electrical failures are prioritised and attended as quickly as possible.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you manage multiple properties for a landlord or agency? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we act as a single point of contact for all trade requirements across a portfolio of properties, coordinating work, providing written quotes and maintaining a record of all completed works for landlord reporting.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Do you work with property management companies in Malta?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we work with property management companies on ongoing maintenance contracts across all trade disciplines with prompt response and clear reporting."}},
+        {"@type": "Question", "name": "Can you carry out a refurbishment between tenancies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we repaint throughout, replace damaged tiles, fix plumbing, repair gypsum ceilings and carry out touch-up work to bring a property back to lettable standard quickly."}},
+        {"@type": "Question", "name": "Do you offer scheduled maintenance programmes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we offer scheduled periodic maintenance including gutter cleaning, roof inspection, facade repainting and plumbing checks planned in advance."}},
+        {"@type": "Question", "name": "What is your typical response time for a maintenance call?", "acceptedAnswer": {"@type": "Answer", "text": "For retainer clients, same-day or next-day response for most issues. Emergency situations are prioritised and attended as quickly as possible."}},
+        {"@type": "Question", "name": "Can you manage multiple properties for a landlord or agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we act as a single point of contact for all trade requirements across a portfolio, providing quotes and maintaining records for landlord reporting."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>

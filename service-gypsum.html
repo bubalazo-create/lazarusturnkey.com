@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gypsum ceilings and partitions in Malta by Lazarus Turnkey Contractor. Creative drywall designs, bulkheads and partition walls.">
-    <title>Gypsum Ceilings & Partitions | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Custom gypsum ceilings, bulkheads, plasterboard partitions and LED cove lighting in Malta. Moisture-resistant boards for bathrooms and exterior applications.">
+    <title>Gypsum Ceilings &amp; Drywall Partitions Malta | Lazarus Turnkey Contractor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,16 @@
         .service-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; display: block; }
         .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-gypsum.html">
 </head>
@@ -127,8 +137,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Gypsum Ceilings &amp; Partitions</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is the difference between gypsum board and plasterboard? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>They refer to the same product — a gypsum core sandwiched between paper liner boards. "Plasterboard" and "drywall" are common alternative names for the same material. We use the term gypsum board in Malta as it is the most widely recognised locally.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can gypsum ceilings hold recessed spotlights? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we install 12.5mm or 15mm boards on a galvanised steel framework rated to support multiple downlights and their fixings. Downlight positions are coordinated with the electrical layout before the boards go up.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you use moisture-resistant boards in bathrooms? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Always. Standard gypsum boards must not be used in wet areas. We use moisture-resistant (green) boards in bathrooms and exterior-grade aqua boards (such as BoardeX) where humidity levels are high or external applications are required.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does gypsum ceiling installation take for a 3-bedroom apartment? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>In Malta, gypsum work is considered complete when the boards are up, jointed, plastered and sanded smooth — ready for painting. A full 3-bedroom apartment typically takes 8–12 days in total, depending on the ceiling design complexity and number of rooms.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can gypsum partitions provide sound insulation? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — double-boarded partitions filled with acoustic insulation batts significantly reduce airborne noise transmission between rooms. The framing, board specification and insulation all contribute to the final acoustic performance.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is the difference between gypsum board and plasterboard?", "acceptedAnswer": {"@type": "Answer", "text": "They refer to the same product — a gypsum core sandwiched between paper liner boards. Plasterboard and drywall are common alternative names."}},
+        {"@type": "Question", "name": "Can gypsum ceilings hold recessed spotlights?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we install 12.5mm or 15mm boards on a steel framework rated to support multiple downlights. Positions are coordinated with the electrical layout before boards go up."}},
+        {"@type": "Question", "name": "Do you use moisture-resistant boards in bathrooms?", "acceptedAnswer": {"@type": "Answer", "text": "Always. We use moisture-resistant (green) boards in bathrooms and exterior-grade aqua boards where humidity levels are high."}},
+        {"@type": "Question", "name": "How long does gypsum ceiling installation take for a 3-bedroom apartment?", "acceptedAnswer": {"@type": "Answer", "text": "In Malta, gypsum work is complete when boards are up, jointed, plastered and sanded smooth. A 3-bedroom apartment typically takes 8–12 days in total."}},
+        {"@type": "Question", "name": "Can gypsum partitions provide sound insulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — double-boarded partitions with acoustic insulation batts significantly reduce airborne noise transmission between rooms."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

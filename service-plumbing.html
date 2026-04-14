@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional plumbing installations in Malta by Lazarus Turnkey Contractor. Hot and cold water systems, drainage, and bathroom fitting.">
-    <title>Plumbing Installations | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Certified plumbers in Malta for hot and cold water supply, drainage, bathroom fitting and pressure testing. Residential and commercial projects across Malta. Free quotes.">
+    <title>Plumbing Installations Malta | Certified Plumbers | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,16 @@
         .service-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; display: block; }
         .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-plumbing.html">
 </head>
@@ -77,8 +87,8 @@
             <div class="content-grid">
                 <div class="content-block">
                     <h2>Reliable Plumbing Installations in Malta</h2>
-                    <p>Plumbing is one of the most critical elements of any finishing project. Our certified plumbers lay all hot and cold water supply lines, install drainage and waste systems, and connect all sanitary fixtures. We coordinate closely with electricians and tilers to ensure everything is in place before walls and floors are closed.</p>
-                    <p>From a single apartment bathroom to a full villa fit-out with multiple bathrooms, kitchen, laundry and outdoor supply points, we handle it all.</p>
+                    <p>Our certified plumbers lay all hot and cold water supply lines, install drainage and waste systems, and connect all sanitary fixtures across Malta. We coordinate closely with electricians and tilers to ensure everything is in place before walls and floors are closed. We serve properties in Naxxar, Mellieħa, Attard, St. Paul's Bay, Sliema and all surrounding areas.</p>
+                    <p>From a single apartment bathroom to a full villa fit-out with multiple bathrooms, kitchen, laundry and outdoor supply points, we handle it all with pressure-tested precision.</p>
 
                     <div class="service-gallery">
                         <img src="Plumbing/Bathroom%20plumbing.jpg" alt="Bathroom plumbing" loading="lazy">
@@ -129,8 +139,61 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Plumbing Installations</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What pipe material do you use for hot and cold water? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We use PPR (Polypropylene Random) or push-fit Acorn pipe for supply lines — both are rated for hot and cold water with a long service life and excellent reliability in Malta's conditions.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Is plumbing done before or after waterproofing? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Plumbing rough-in and pressure testing must always be completed before waterproofing. Waterproofing is then applied over the tested pipe locations; tiling follows after that. Getting this sequence wrong creates serious problems with leaks and repairs later.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you connect a boiler or water heater? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we handle all connections to boilers, water heaters and in-line heaters, coordinating with other trades to ensure the supply and return pipework is correctly routed and insulated.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do you test plumbing before closing up walls? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We pressure-test all supply lines using a manometer gauge, holding pressure for a minimum of 30 minutes before any plaster or screed is applied. Any drop in pressure is investigated and resolved before surfaces are closed.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you install underfloor heating pipes? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we lay the UFH pipe loops, connect manifolds and pressure-test the system before screed is poured. Correct pipe spacing and coverage depth are essential for efficient heat distribution.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What pipe material do you use for hot and cold water?", "acceptedAnswer": {"@type": "Answer", "text": "We use PPR (Polypropylene Random) or push-fit Acorn pipe for supply lines — both are rated for hot and cold water with a long service life."}},
+        {"@type": "Question", "name": "Is plumbing done before or after waterproofing?", "acceptedAnswer": {"@type": "Answer", "text": "Plumbing rough-in and pressure testing must be completed before waterproofing. Waterproofing is applied over the tested pipe locations; tiling follows after."}},
+        {"@type": "Question", "name": "Can you connect a boiler or water heater?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we handle all connections to boilers, water heaters and in-line heaters, coordinating with other trades to ensure pipework is correctly routed and insulated."}},
+        {"@type": "Question", "name": "How do you test plumbing before closing up walls?", "acceptedAnswer": {"@type": "Answer", "text": "We pressure-test all supply lines using a manometer gauge, holding pressure for a minimum of 30 minutes before any plaster or screed is applied."}},
+        {"@type": "Question", "name": "Can you install underfloor heating pipes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we lay the UFH pipe loops, connect manifolds and pressure-test the system before screed is poured over the pipes."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
-

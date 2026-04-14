@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Waterproofing services in Malta by Lazarus Turnkey Contractor. Roof, terrace, bathroom and basement waterproofing solutions.">
-    <title>Waterproofing | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Specialist waterproofing in Malta — roof membranes, terrace tanking, bathroom wet room sealing and underground cistern protection. Flood-tested before tiling.">
+    <title>Waterproofing Malta | Roof, Terrace &amp; Bathroom Tanking | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -42,6 +42,16 @@
         .service-gallery img:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
         
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-waterproofing.html">
 </head>
@@ -127,8 +137,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Waterproofing</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">When in the construction sequence should waterproofing be done? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>After plumbing rough-in is complete and pressure-tested, before screed and before any tiling. In bathrooms, the wet area must be waterproofed and flood-tested before wall or floor tiling begins. Getting this sequence wrong is one of the most common and costly mistakes in construction.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do you test waterproofing before tiling? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We carry out a flood test — blocking all drains and filling the area 25–50mm deep with water, leaving it for 24–48 hours. Any drop in water level indicates a failure that must be addressed before tiling commences.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is the best waterproofing system for a flat roof in Malta? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A torch-on SBS bituminous membrane (2-layer system) offers the best durability for Malta's UV exposure and high summer temperatures. Liquid polyurethane or acrylic coatings are suitable for maintenance top-up applications on existing weatherproof surfaces.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you waterproof a leaking terrace without removing tiles? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>In some cases injection or liquid remedial systems can be applied without removing tiles, but the success of this approach depends on the condition of the existing substrate. A site inspection is required to confirm what is feasible.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Is bathroom waterproofing required in Malta? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>It is both best practice and standard under European construction norms. All wet areas — shower trays, walk-in showers, bathtub zones and balcony floors — should be correctly waterproofed before any tiling to prevent water ingress and costly damage to the structure below.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "When in the construction sequence should waterproofing be done?", "acceptedAnswer": {"@type": "Answer", "text": "After plumbing rough-in is complete and pressure-tested, before screed and before any tiling."}},
+        {"@type": "Question", "name": "How do you test waterproofing before tiling?", "acceptedAnswer": {"@type": "Answer", "text": "We carry out a flood test — blocking all drains and filling the area 25–50mm deep with water for 24–48 hours. Any drop indicates a failure."}},
+        {"@type": "Question", "name": "What is the best waterproofing system for a flat roof in Malta?", "acceptedAnswer": {"@type": "Answer", "text": "A torch-on SBS bituminous membrane (2-layer system) offers the best durability for Malta's UV exposure and high summer temperatures."}},
+        {"@type": "Question", "name": "Can you waterproof a leaking terrace without removing tiles?", "acceptedAnswer": {"@type": "Answer", "text": "In some cases injection or liquid remedial systems can be applied without removing tiles, but a site inspection is required to confirm feasibility."}},
+        {"@type": "Question", "name": "Is bathroom waterproofing required in Malta?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — all wet areas should be correctly waterproofed before tiling to prevent water ingress and structural damage."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

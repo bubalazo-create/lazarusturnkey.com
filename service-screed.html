@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Floor screeding services in Malta by Lazarus Turnkey Contractor. Sand-cement and self-levelling screed for perfect floor bases.">
-    <title>Screed | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Professional floor screeding in Malta. Bonded, unbonded and floating screed, UFH encapsulation and self-levelling compound. Correctly mixed, correctly laid, correctly cured.">
+    <title>Floor Screeding Malta | Sand-Cement &amp; Self-Levelling Screed | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,16 @@
         .service-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; display: block; }
         .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-screed.html">
 </head>
@@ -129,8 +139,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Floor Screeding</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What thickness should floor screed be in a new apartment? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Bonded screed is typically 40–50mm thick. Unbonded floating screed is 65–75mm. With underfloor heating pipes, allow at least 25mm of screed above the top of the pipe. Thickness affects both cure time and structural performance.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does screed take to dry before tiling? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>For our traditional sand-cement screed we typically allow approximately one week before tiling can begin, given Malta's warm and dry climate that aids curing. Self-levelling compounds can be ready to tile in as little as 24 hours.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you screed over underfloor heating pipes? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we encase the heating pipe loops in screed with the correct cover depth, ensuring no movement joints cross over the pipes. The system is pressure-tested before the screed is poured.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is the difference between bonded and floating screed? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Bonded screed is adhered directly to the structural slab with a bonding agent and can be thinner. Floating screed lies on a separation membrane over insulation or underfloor heating — allowing thermal movement. Floating screed can also be laid over Torba (traditional three-eighths aggregate) where a legacy sub-base already exists.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do you check if screed is flat enough to tile on? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We use a 2m straightedge to check the surface flatness. For reliable tile installation we work to a maximum deviation of ±5mm under a 2m straightedge. Any high spots are ground down and low spots filled before tiling begins.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What thickness should floor screed be in a new apartment?", "acceptedAnswer": {"@type": "Answer", "text": "Bonded screed is typically 40–50mm. Unbonded floating screed is 65–75mm. With underfloor heating pipes, allow at least 25mm above the pipe top."}},
+        {"@type": "Question", "name": "How long does screed take to dry before tiling?", "acceptedAnswer": {"@type": "Answer", "text": "For traditional sand-cement screed we typically allow approximately one week before tiling, given Malta's warm dry climate. Self-levelling compounds can be ready in 24 hours."}},
+        {"@type": "Question", "name": "Can you screed over underfloor heating pipes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we encase the pipe loops in screed with the correct cover depth, ensuring no movement joints cross over the pipes."}},
+        {"@type": "Question", "name": "What is the difference between bonded and floating screed?", "acceptedAnswer": {"@type": "Answer", "text": "Bonded screed adheres directly to the slab. Floating screed lies on a membrane over insulation or UFH. Floating screed can also be laid over Torba (traditional three-eighths aggregate) where a legacy sub-base exists."}},
+        {"@type": "Question", "name": "How do you check if screed is flat enough to tile on?", "acceptedAnswer": {"@type": "Answer", "text": "We use a 2m straightedge. For tile installation we work to a maximum deviation of ±5mm under a 2m straightedge. High spots are ground down and low spots filled before tiling."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

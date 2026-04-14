@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional electrical installations in Malta by Lazarus Turnkey Contractor. Full wiring, lighting, smart home and distribution board solutions.">
-    <title>Electrical Installations | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Licensed electricians in Malta covering full wiring, distribution boards, smart home systems and electrical upgrades for apartments and villas. Get a free quote today.">
+    <title>Electrical Installations Malta | Licensed Electricians | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -42,6 +42,17 @@
         .service-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; display: block; }
         .service-gallery img:hover { transform: scale(1.02); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        /* FAQ Accordion */
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-electrical.html">
 </head>
@@ -77,9 +88,9 @@
             <div class="breadcrumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Electrical Installations</div>
             <div class="content-grid">
                 <div class="content-block">
-                    <h2>Professional Electrical Installations in Malta</h2>
-                    <p>At Lazarus Turnkey Contractor, our certified electricians handle every aspect of electrical work — from the initial rough-in wiring on a shell property to the final connection of fixtures and smart home systems. We work on both residential apartments and villas, ensuring all installations comply with Maltese building regulations.</p>
-                    <p>Whether you are finishing a new apartment from scratch or upgrading an existing property, we provide a full electrical service that integrates safely and neatly into your finishes.</p>
+                    <h2>Licensed Electrical Installations in Malta</h2>
+                    <p>At Lazarus Turnkey Contractor, our licensed electricians handle every aspect of electrical work — from the initial rough-in wiring on a shell property to the final connection of fixtures and smart home systems. We work on both residential apartments and villas across Malta, ensuring all installations comply with Maltese building regulations and BS 7671 wiring standards.</p>
+                    <p>Whether you are finishing a new apartment from scratch or upgrading an existing property, we provide a full electrical service that integrates safely and neatly into your finishes. We serve Naxxar, Sliema, Attard, St. Paul's Bay, Mellieħa, Mosta, Qormi, St. Julians and all surrounding areas.</p>
 
                     <div class="service-gallery">
                         <img src="Electrical/DB%20AC%20Lija.jpg" alt="Distribution Board Installation Lija" loading="lazy">
@@ -132,8 +143,61 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Electrical Installations</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do I need a licensed electrician in Malta? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes. Maltese building regulations require all electrical work to be carried out or supervised by a licensed Warrant Holder. Our team includes licensed electrical contractors who ensure all works are compliant with local regulations and BS 7671 wiring standards.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is a distribution board and do I need one? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A distribution board (DB board) is the central hub of your property's electrical circuits, housing MCBs and RCDs that protect each circuit. Every new installation requires a correctly specified and labelled DB board in compliance with local regulations.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does electrical wiring take for a typical Malta apartment? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A standard two-bedroom apartment typically takes 3–5 working days for rough-in wiring, and one additional day for second-fix (sockets, switches, fixtures) once plastering is complete.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you wire a smart home or home automation system? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we pre-wire for KNX, Z-Wave and other automation systems, including dimmers, scene controllers and structured cabling for AV equipment. Wiring for smart systems must be planned and installed before walls are plastered.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you handle air conditioning pre-wiring? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we route and terminate dedicated circuits for split AC units before walls are plastered, ensuring clean, hidden cable runs and correctly rated breakers in the distribution board.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Do I need a licensed electrician in Malta?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Maltese building regulations require all electrical work to be carried out or supervised by a licensed Warrant Holder. Our team includes licensed electrical contractors who ensure all works are compliant with local regulations and BS 7671 wiring standards."}},
+        {"@type": "Question", "name": "What is a distribution board and do I need one?", "acceptedAnswer": {"@type": "Answer", "text": "A distribution board (DB board) is the central hub of your property's electrical circuits, housing MCBs and RCDs that protect each circuit. Every new installation requires a correctly specified and labelled DB board in compliance with local regulations."}},
+        {"@type": "Question", "name": "How long does electrical wiring take for a typical Malta apartment?", "acceptedAnswer": {"@type": "Answer", "text": "A standard two-bedroom apartment typically takes 3–5 working days for rough-in wiring, and one additional day for second-fix (sockets, switches, fixtures) once plastering is complete."}},
+        {"@type": "Question", "name": "Can you wire a smart home or home automation system?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we pre-wire for KNX, Z-Wave and other automation systems, including dimmers, scene controllers and structured cabling for AV equipment."}},
+        {"@type": "Question", "name": "Do you handle air conditioning pre-wiring?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we route and terminate dedicated circuits for split AC units before walls are plastered, ensuring clean, hidden cable runs and correctly rated breakers in the distribution board."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
-

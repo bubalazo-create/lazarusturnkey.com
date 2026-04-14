@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Facade and exterior finishing services in Malta by Lazarus Turnkey Contractor. External render, cladding and facade systems.">
-    <title>Facade & Exterior Finishing | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Facade and exterior finishing in Malta: external render, ETICS insulation, limestone wall restoration, pointing and facade painting for villas and apartment blocks.">
+    <title>Facade &amp; Exterior Render Malta | External Finishing Contractor | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -38,6 +38,16 @@
         .breadcrumb a { color: var(--color-primary); }
         .photo-placeholder { background: var(--color-bg-alt); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; margin: 1.5rem 0; border: 2px dashed var(--color-border); text-align: center; }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-facade.html">
 </head>
@@ -118,8 +128,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Facade &amp; Exterior Finishing</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you restore traditional Maltese limestone facades? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — restoring traditional Globigerina limestone facades is one of our specialisms. We clean the stone surface, treat it with appropriate consolidants and water-repellent chemicals to protect against salt and moisture ingress, and repoint deteriorated mortar joints with a lime-based mortar compatible with the original masonry.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What is ETICS (External Wall Insulation)? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>ETICS (External Thermal Insulation Composite System) involves fixing EPS or mineral wool insulation boards to the facade, covering them with a fibreglass-reinforced render base coat, and finishing with a decorative silicone or mineral render. It significantly improves a building's thermal performance and reduces energy costs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Is external render suitable for Malta's climate? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we use silicone-modified render systems that are hydrophobic (water-repellent) and elastomeric. They are designed to flex with Malta's significant temperature swings without cracking, and resist UV degradation and salt-air exposure.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does a facade render system last? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A correctly applied silicone or mineral render system with proper detailing at windows and reveals should last 15–25 years before requiring re-treatment or refreshing with a new surface coat.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you repair cracks in existing external render? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we cut back failed areas, apply bonding treatment, re-render and feather into the surrounding surface for a seamless appearance. Where cracking is widespread, a full re-render may be more cost-effective than patch repairs.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Do you restore traditional Maltese limestone facades?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we clean limestone, treat it with consolidants and water-repellent chemicals, and repoint mortar joints with lime-based mortar compatible with the original masonry."}},
+        {"@type": "Question", "name": "What is ETICS (External Wall Insulation)?", "acceptedAnswer": {"@type": "Answer", "text": "ETICS involves fixing insulation boards to the facade, reinforced render base coat, and a decorative finish. It improves thermal performance and reduces energy costs."}},
+        {"@type": "Question", "name": "Is external render suitable for Malta's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we use silicone-modified hydrophobic render systems that flex with temperature swings and resist UV degradation and salt-air exposure."}},
+        {"@type": "Question", "name": "How long does a facade render system last?", "acceptedAnswer": {"@type": "Answer", "text": "A correctly applied silicone or mineral render system should last 15–25 years before requiring re-treatment."}},
+        {"@type": "Question", "name": "Can you repair cracks in existing external render?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we cut back failed areas, apply bonding treatment, re-render and feather into the surrounding surface."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
 

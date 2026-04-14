@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bathroom installation services in Malta by Lazarus Turnkey Contractor. Complete bathroom fit-out from plumbing to fixtures and accessories.">
-    <title>Bathroom Installation | Lazarus Turnkey Contractor Malta</title>
+    <meta name="description" content="Full bathroom installation in Malta — waterproofing, tiling, plumbing, sanitary ware fitting and accessories. En-suites to master bathrooms by experienced contractors.">
+    <title>Bathroom Fitting Malta | Complete Bathroom Installation | Lazarus Turnkey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,16 @@
         .project-gallery img { width: 100%; height: clamp(140px, 25vw, 200px); object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; display: block; }
         .project-gallery img:hover { transform: scale(1.03); }
         @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar-card { position: static; } }
+        .faq-section { padding: 4rem 0 2rem; background: var(--color-bg-alt); }
+        .faq-section .section-title { font-size: 1.8rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+        .faq-section .divider { margin-bottom: 2rem; }
+        .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: white; border: none; text-align: left; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-question .faq-icon { flex-shrink: 0; color: var(--color-primary); font-size: 1.1rem; transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 1.25rem 1.1rem; color: var(--color-text-light); line-height: 1.8; margin: 0; }
     </style>
     <link rel="canonical" href="https://www.lazarusturnkey.com/service-bathroom.html">
 </head>
@@ -127,7 +137,61 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions — Bathroom Installation</h2>
+            <div class="divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does a complete bathroom installation take? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A standard bathroom from bare room to complete finish takes 7–14 working days, depending on room size, tile choice and fixture delivery lead times. Complex bathrooms with feature shower walls or bespoke designs may take longer.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you supply the bathroom fixtures as well as fit them? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We are primarily an installation contractor. We recommend you select fixtures from a showroom with our guidance, and we handle all fitting, plumbing connections and electrical connections.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What sanitary ware brands do you install? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>We install all major brands including Grohe, Hansgrohe, Roca, Ideal Standard, Geberit and Vitra, as well as products from local Maltese bathroom suppliers.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do I need waterproofing even if I'm using a shower tray? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we waterproof the full shower area regardless of whether a prefabricated tray is used. Grouted joints and tray flanges can fail over time, and proper waterproofing of the surrounding walls and floor prevents any water from reaching the structure beneath.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you install heated towel rails? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes — we connect both electric and plumbed (wet) towel rail systems as part of the bathroom installation, coordinating with the electrical and plumbing rough-in stages.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How long does a complete bathroom installation take?", "acceptedAnswer": {"@type": "Answer", "text": "A standard bathroom from bare room to complete finish takes 7–14 working days, depending on size, tile choice and fixture lead times."}},
+        {"@type": "Question", "name": "Can you supply the bathroom fixtures as well as fit them?", "acceptedAnswer": {"@type": "Answer", "text": "We are primarily an installation contractor. We recommend you select fixtures from a showroom with our guidance, and we handle all fitting and connections."}},
+        {"@type": "Question", "name": "What sanitary ware brands do you install?", "acceptedAnswer": {"@type": "Answer", "text": "We install all major brands including Grohe, Hansgrohe, Roca, Ideal Standard, Geberit and Vitra, plus products from local Maltese suppliers."}},
+        {"@type": "Question", "name": "Do I need waterproofing even if I'm using a shower tray?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we waterproof the full shower area regardless of tray type. Grouted joints and tray flanges can fail, and proper waterproofing prevents water reaching the structure beneath."}},
+        {"@type": "Question", "name": "Do you install heated towel rails?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we connect both electric and plumbed (wet) towel rail systems as part of the bathroom installation."}}
+      ]
+    }
+    </script>
+
     <a href="https://wa.me/35699011090" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            const answer = btn.nextElementSibling;
+            answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        });
+    });
+    </script>
 </body>
 </html>
