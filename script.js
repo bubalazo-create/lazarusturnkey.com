@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawWatermarked(src) {
         const sourceImg = new Image();
-        sourceImg.crossOrigin = 'anonymous';
         sourceImg.onload = () => {
             // Fit within 90vw × 90vh
             const maxW = window.innerWidth  * 0.90;
