@@ -208,7 +208,8 @@
             align-items: center;
         }
 
-        .lightbox-img {
+        .lightbox-img,
+        .lightbox-canvas {
             max-width: 90vw;
             max-height: 80vh;
             object-fit: contain;
@@ -216,9 +217,11 @@
             box-shadow: 0 30px 80px rgba(0,0,0,0.6);
             transform: scale(0.92);
             transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+            display: block;
         }
 
-        .lightbox.active .lightbox-img {
+        .lightbox.active .lightbox-img,
+        .lightbox.active .lightbox-canvas {
             transform: scale(1);
         }
 
@@ -714,8 +717,7 @@
         <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
         <div class="lightbox-inner">
             <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
-            <img src="" alt="" class="lightbox-img" id="lightboxImg">
-            <p class="lightbox-caption" id="lightboxCaption"></p>
+            <canvas class="lightbox-canvas" id="lightboxCanvas"></canvas>
         </div>
         <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
     </div>
@@ -750,14 +752,46 @@
 
         // ── Lightbox ─────────────────────────────────────────────────
         const lightbox   = document.getElementById('lightbox');
-        const lbImg      = document.getElementById('lightboxImg');
-        const lbCaption  = document.getElementById('lightboxCaption');
+        const lbCanvas   = document.getElementById('lightboxCanvas');
         const lbClose    = document.getElementById('lightboxClose');
         const lbPrev     = document.getElementById('lightboxPrev');
         const lbNext     = document.getElementById('lightboxNext');
 
         let currentIndex = 0;
         let visibleItems = [];
+
+        function drawWatermarked(src) {
+            const sourceImg = new Image();
+            sourceImg.onload = () => {
+                const maxW = window.innerWidth  * 0.90;
+                const maxH = window.innerHeight * 0.80;
+                const scale = Math.min(maxW / sourceImg.naturalWidth, maxH / sourceImg.naturalHeight, 1);
+                lbCanvas.width  = sourceImg.naturalWidth  * scale;
+                lbCanvas.height = sourceImg.naturalHeight * scale;
+                const ctx = lbCanvas.getContext('2d');
+                ctx.drawImage(sourceImg, 0, 0, lbCanvas.width, lbCanvas.height);
+                // Watermark
+                const fontSize = Math.max(16, Math.round(lbCanvas.width * 0.035));
+                ctx.save();
+                ctx.globalAlpha  = 0.30;
+                ctx.fillStyle    = '#ffffff';
+                ctx.font         = `600 ${fontSize}px Montserrat, sans-serif`;
+                ctx.shadowColor  = 'rgba(0,0,0,0.6)';
+                ctx.shadowBlur   = 4;
+                ctx.textAlign    = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.translate(lbCanvas.width / 2, lbCanvas.height / 2);
+                ctx.rotate(-30 * Math.PI / 180);
+                const text  = '\u00a9 lazarusturnkey.com';
+                const stepX = lbCanvas.width  * 0.55;
+                const stepY = lbCanvas.height * 0.28;
+                for (let y = -lbCanvas.height; y < lbCanvas.height; y += stepY)
+                    for (let x = -lbCanvas.width; x < lbCanvas.width; x += stepX)
+                        ctx.fillText(text, x, y);
+                ctx.restore();
+            };
+            sourceImg.src = src;
+        }
 
         function openLightbox(index) {
             visibleItems = [...document.querySelectorAll('.gallery-item:not(.hidden)')];
@@ -776,9 +810,7 @@
             const item = visibleItems[i];
             if (!item) return;
             const img = item.querySelector('img');
-            lbImg.src = img.src;
-            lbImg.alt = img.alt;
-            lbCaption.textContent = item.dataset.label || '';
+            drawWatermarked(img.src);
         }
 
         galleryItems.forEach((item, idx) => {
