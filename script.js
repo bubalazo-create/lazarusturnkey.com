@@ -148,23 +148,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+        <p class="lightbox-caption"></p>
+    `;
     document.body.appendChild(lightbox);
 
-    const lightboxImg = document.createElement('img');
-    lightbox.appendChild(lightboxImg);
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-    const galleryImages = document.querySelectorAll('.service-gallery img, .project-img, .photo-gallery img, .about-image-wrapper img');
+    function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = alt || '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
+    const galleryImages = document.querySelectorAll('.service-gallery img, .project-gallery img, .project-img, .photo-gallery img');
     galleryImages.forEach(img => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', () => {
-            lightbox.classList.add('active');
-            lightboxImg.src = img.src;
-        });
+        img.addEventListener('click', () => openLightbox(img.src, img.alt));
     });
 
-    lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
     // 8. Cookie Consent & Google Analytics
     const measurementId = 'G-10SZRQJE24';
@@ -238,17 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     answer.style.maxHeight = answer.scrollHeight + 50 + "px";
                 }
             });
-        }
-    });
-
-    // 10. Dynamic Watermark injection for service galleries
-    const serviceImages = document.querySelectorAll('.service-gallery img');
-    serviceImages.forEach(img => {
-        if (!img.parentElement.classList.contains('service-watermark-wrapper')) {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'service-watermark-wrapper';
-            img.parentNode.insertBefore(wrapper, img);
-            wrapper.appendChild(img);
         }
     });
 
