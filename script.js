@@ -144,43 +144,78 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => el.classList.add('revealed'));
     }
 
-    // 7. Lightbox for Galleries
+    // 7. Lightbox for Galleries — canvas watermark
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.className = 'lightbox';
-    lightbox.innerHTML = `
-        <button class="lightbox-close" aria-label="Close">&times;</button>
-        <img class="lightbox-img" src="" alt="">
-        <p class="lightbox-caption"></p>
-    `;
     document.body.appendChild(lightbox);
 
-    const lightboxImg = lightbox.querySelector('.lightbox-img');
-    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    // Close button
+    const lbClose = document.createElement('button');
+    lbClose.className = 'lightbox-close';
+    lbClose.innerHTML = '&times;';
+    lbClose.setAttribute('aria-label', 'Close');
+    lightbox.appendChild(lbClose);
 
-    function openLightbox(src, alt) {
-        lightboxImg.src = src;
-        lightboxImg.alt = alt || '';
-        lightboxCaption.textContent = alt || '';
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    // Use a canvas instead of <img> so we can paint the watermark
+    const lbCanvas = document.createElement('canvas');
+    lbCanvas.className = 'lightbox-canvas';
+    lightbox.appendChild(lbCanvas);
+
+    function drawWatermarked(src) {
+        const sourceImg = new Image();
+        sourceImg.crossOrigin = 'anonymous';
+        sourceImg.onload = () => {
+            // Fit within 90vw × 90vh
+            const maxW = window.innerWidth  * 0.90;
+            const maxH = window.innerHeight * 0.90;
+            const scale = Math.min(maxW / sourceImg.naturalWidth, maxH / sourceImg.naturalHeight, 1);
+            lbCanvas.width  = sourceImg.naturalWidth  * scale;
+            lbCanvas.height = sourceImg.naturalHeight * scale;
+
+            const ctx = lbCanvas.getContext('2d');
+            ctx.drawImage(sourceImg, 0, 0, lbCanvas.width, lbCanvas.height);
+
+            // --- Watermark ---
+            const fontSize = Math.max(16, Math.round(lbCanvas.width * 0.035));
+            ctx.save();
+            ctx.globalAlpha = 0.30;
+            ctx.fillStyle   = '#ffffff';
+            ctx.font        = `600 ${fontSize}px Montserrat, sans-serif`;
+            ctx.shadowColor = 'rgba(0,0,0,0.6)';
+            ctx.shadowBlur  = 4;
+            ctx.textAlign   = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Repeat diagonally
+            ctx.translate(lbCanvas.width / 2, lbCanvas.height / 2);
+            ctx.rotate(-30 * Math.PI / 180);
+            const text   = '© lazarusturnkey.com';
+            const stepX  = lbCanvas.width  * 0.55;
+            const stepY  = lbCanvas.height * 0.28;
+            for (let y = -lbCanvas.height; y < lbCanvas.height; y += stepY) {
+                for (let x = -lbCanvas.width; x < lbCanvas.width; x += stepX) {
+                    ctx.fillText(text, x, y);
+                }
+            }
+            ctx.restore();
+        };
+        sourceImg.src = src;
     }
 
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => { lightboxImg.src = ''; }, 300);
-    }
-
-    const galleryImages = document.querySelectorAll('.service-gallery img, .project-gallery img, .project-img, .photo-gallery img');
+    const galleryImages = document.querySelectorAll('.service-gallery img, .project-img, .photo-gallery img, .about-image-wrapper img');
     galleryImages.forEach(img => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', () => openLightbox(img.src, img.alt));
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            drawWatermarked(img.src);
+        });
     });
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    function closeLightbox() { lightbox.classList.remove('active'); }
+    lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+    lightbox.addEventListener('click', closeLightbox);
+    lbCanvas.addEventListener('click', (e) => e.stopPropagation());
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
     // 8. Cookie Consent & Google Analytics
@@ -255,6 +290,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     answer.style.maxHeight = answer.scrollHeight + 50 + "px";
                 }
             });
+        }
+    });
+
+    // 10. Dynamic Watermark injection for service galleries
+    const serviceImages = document.querySelectorAll('.service-gallery img');
+    serviceImages.forEach(img => {
+        if (!img.parentElement.classList.contains('service-watermark-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'service-watermark-wrapper';
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
         }
     });
 
